@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { FaArrowLeft, FaPrint } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
+import { helperReadableCurrency } from "../utils/helpers";
 
 const POSPrintPage = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const POSPrintPage = () => {
     if (productChoices && grandTotal && checkout) {
       window.print();
     }
-  }, []);
+  });
   return (
     <Container>
       <Row>
@@ -39,15 +40,15 @@ const POSPrintPage = () => {
               {productChoices.map((product) => (
                 <tr>
                   <td>{product.title}</td>
-                  <td>{product.price}</td>
+                  <td>{helperReadableCurrency(product.price)}</td>
                   <td>{product.quantity}</td>
-                  <td>{product.subtotal}</td>
+                  <td>{helperReadableCurrency(product.subtotal)}</td>
                 </tr>
               ))}
               <tr>
                 <td>Total</td>
                 <td colSpan={3} style={{ textAlign: "right" }}>
-                  {grandTotal}
+                  {helperReadableCurrency(grandTotal)}
                 </td>
               </tr>
             </tbody>

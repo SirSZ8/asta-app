@@ -21,11 +21,12 @@ const logout = () => {
 };
 
 const getUserFromToken = () => {
-  let tokem = getToken();
+  let token = getToken();
   let user = JSON.parse(atob(token.split(".")[1]));
   return user;
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   login,
   saveToken,

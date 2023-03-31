@@ -7,4 +7,5 @@ const list = () => {
   return axios.get(`${config.BASE_URL}${ENDPOINT}`);
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { list };
