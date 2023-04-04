@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { FaArrowLeft, FaPrint } from "react-icons/fa";
@@ -13,7 +14,7 @@ const POSPrintPage = () => {
     if (productChoices && grandTotal && checkout) {
       window.print();
     }
-  });
+  }, []);
   return (
     <Container>
       <Row>

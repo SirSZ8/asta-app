@@ -18,7 +18,8 @@ code {
     color: black !important;
   }
 
+  button,
   .btn {
-    display: none;
+    display: none !important;
   }
 }
